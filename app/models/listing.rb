@@ -3,4 +3,5 @@ class Listing < ApplicationRecord
     has_many :reservations
     has_one :property, dependent: :destroy
     has_many :amenities
+    has_many :reviews
 end
