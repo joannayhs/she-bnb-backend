@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  type: 
+  max_guests: 1
+  num_of_beds: 1
+  price: 9.99
+
+two:
+  title: MyString
+  description: MyString
+  type: 
+  max_guests: 1
+  num_of_beds: 1
+  price: 9.99
