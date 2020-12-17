@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
-  resources :reviews
   namespace :api do
     namespace :v1 do
+      resources :reviews
       resources :reservations
       resources :listings do 
         resources :reservations
         resources :properties
         resources :amenities
+        resources :reviews
       end 
       resources :users do 
         resources :listings
         resources :reservations
+        resources :reviews
       end 
     end 
   end 
