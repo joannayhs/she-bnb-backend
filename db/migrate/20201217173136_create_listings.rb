@@ -7,6 +7,7 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.integer :max_guests
       t.integer :num_of_beds
       t.decimal :price
+      t.integer :user_id
 
       t.timestamps
     end
