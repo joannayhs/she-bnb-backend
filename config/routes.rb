@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :reservations
       resources :listings do 
         resources :reservations
+        resources :properties
       end 
       resources :users do 
         resources :listings
