@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :properties
         resources :amenities
         resources :reviews
+        resources :images
       end 
       resources :users do 
         resources :listings
