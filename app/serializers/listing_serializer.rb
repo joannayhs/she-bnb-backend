@@ -1,6 +1,6 @@
 class ListingSerializer
   include JSONAPI::Serializer
-  attributes :title, :description, :type_of, :max_guests, :num_of_beds, :price
+  attributes :user_id, :title, :description, :type_of, :max_guests, :num_of_beds, :price
   attribute :images do |listing| 
     listing.images.each do |image|
       {
