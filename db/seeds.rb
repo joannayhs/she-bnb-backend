@@ -17,3 +17,21 @@ chattanooga.images.create(description: "Bedroom", url: "https://a0.muscache.com/
 chattanooga.images.create(description: "Bathroom", url: "https://a0.muscache.com/im/pictures/d4b67869-226f-4824-a4ff-05eb59b12e77.jpg?im_w=720")
 joanna.reservations.create(listing_id: 2, start_date: "2020-10-22", end_date: "2020-10-23")
 joanna.reviews.create(content: "This place was great! It was clean and the host was great!", stars: 5, listing_id:2)
+
+chattanooga.amenities.create(name: "Wifi")
+chattanooga.amenities.create(name: "Kitchen")
+chattanooga.amenities.create(name: "Parking")
+chattanooga.amenities.create(name: "TV")
+chattanooga.amenities.create(name: "Iron")
+chattanooga.amenities.create(name: "Hair Dryer")
+chattanooga.amenities.create(name: "Dedicated Workspace")
+chattanooga.amenities.create(name: "Hangers")
+chattanooga.amenities.create(name: "Dryer")
+chattanooga.amenities.create(name: "Washer")
+
+
+
+
+
+
+

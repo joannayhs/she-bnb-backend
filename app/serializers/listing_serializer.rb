@@ -19,6 +19,11 @@ class ListingSerializer
     }
   end
 
+  attribute :amenities do |listing|
+    {
+      name: listing.amenities.name
+    }
+  end 
   has_many :reviews
   has_many :reservations
 end

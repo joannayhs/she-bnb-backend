@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_192205) do
+ActiveRecord::Schema.define(version: 2020_12_22_212353) do
 
   create_table "amenities", force: :cascade do |t|
     t.string "name"
-    t.boolean "included"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "amenities_listings", id: false, force: :cascade do |t|
+    t.integer "amenity_id"
     t.integer "listing_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
