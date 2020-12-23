@@ -1,6 +1,6 @@
 class ListingSerializer
   include JSONAPI::Serializer
-  attributes :user_id, :title, :description, :type_of, :max_guests, :num_of_beds, :price
+  attributes :user_id, :title, :description, :type_of, :max_guests, :num_of_beds, :price, :amenities
   attribute :images do |listing| 
     listing.images.each do |image|
       {
@@ -16,12 +16,6 @@ class ListingSerializer
       city: listing.property.city, 
       state: listing.property.state, 
       zip: listing.property.zip
-    }
-  end
-
-  attribute :amenities do |listing|
-    {
-      name: listing.amenities.name
     }
   end 
   has_many :reviews
