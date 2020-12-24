@@ -28,6 +28,16 @@ chattanooga.amenities.create(name: "Dedicated Workspace")
 chattanooga.amenities.create(name: "Hangers")
 chattanooga.amenities.create(name: "Dryer")
 chattanooga.amenities.create(name: "Washer")
+Amenity.create(name: "Indoor Fireplace")
+Amenity.create(name: "Heating")
+Amenity.create(name: "Air Conditioning")
+Amenity.create(name: "Dishwasher")
+Amenity.create(name: "Coffee Maker")
+Amenity.create(name: "Private Entrance")
+Amenity.create(name: "Lockbox")
+Amenity.create(name: "Shampoo")
+Amenity.create(name: "Conditioner")
+Amenity.create(name: "Patio or Balcony")
 
 
 

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_212353) do
     t.string "type_of"
     t.integer "max_guests"
     t.integer "num_of_beds"
-    t.decimal "price"
+    t.integer "price"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
