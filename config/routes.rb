@@ -10,9 +10,9 @@ Rails.application.routes.draw do
       resources :amenities
       resources :reviews
       resources :reservations
+      resources :properties
       resources :listings do 
         resources :reservations
-        resources :properties
         resources :amenities
         resources :reviews
         resources :images

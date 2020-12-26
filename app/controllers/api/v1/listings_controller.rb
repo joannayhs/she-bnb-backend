@@ -15,7 +15,7 @@ class Api::V1::ListingsController < ApplicationController
         if @listing.save 
             render json: ListingSerializer.new(@listing).serializable_hash.to_json, status: 200
         else
-            render json: {alert: "An error occured"}
+            render json: {error: "Could not save listing"}
         end 
     end 
     
@@ -23,6 +23,6 @@ class Api::V1::ListingsController < ApplicationController
     private 
 
     def listing_params
-        params.require(:listing).permit(:title, :description, :type_of, :max_guests, :num_of_beds, :price, :user_id)
+        params.require(:listing).permit(:title, :description, :type_of, :max_guests, :num_of_beds, :price, :user_id, property_attributes: {})
     end 
 end

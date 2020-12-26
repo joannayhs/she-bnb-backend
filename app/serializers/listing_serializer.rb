@@ -8,16 +8,8 @@ class ListingSerializer
         url: image.url
       }
     end
-  end
-    
-  attribute :property do |listing|
-    {
-      street: listing.property.street, 
-      city: listing.property.city, 
-      state: listing.property.state, 
-      zip: listing.property.zip
-    }
   end 
   has_many :reviews
   has_many :reservations
+  has_one :property
 end

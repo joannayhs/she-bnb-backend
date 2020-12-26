@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
     belongs_to :user
-
+    
     validates :title, presence: true, uniqueness: true
     validates :description, :type_of, :max_guests, :num_of_beds, :price, presence: true
 
