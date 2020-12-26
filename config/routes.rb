@@ -11,11 +11,11 @@ Rails.application.routes.draw do
       resources :reviews
       resources :reservations
       resources :properties
+      resources :images
       resources :listings do 
         resources :reservations
         resources :amenities
         resources :reviews
-        resources :images
       end 
       resources :users do 
         resources :listings

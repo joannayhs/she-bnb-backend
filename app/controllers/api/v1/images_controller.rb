@@ -1,8 +1,8 @@
-class ImageController < ApplicationController
+class Api::V1::ImagesController < ApplicationController
 
     def create 
         @image = Image.new(image_params)
-        if image.save
+        if @image.save
             render json: ImageSerializer.new(@image).serializable_hash.to_json, status: 200
         else 
             render json: {error: "Could not add image"}
@@ -12,6 +12,6 @@ class ImageController < ApplicationController
     private 
 
     def image_params
-        params.require(:images).permit(:description, :url)
+        params.require(:image).permit(:description, :url, :listing_id)
     end 
 end
