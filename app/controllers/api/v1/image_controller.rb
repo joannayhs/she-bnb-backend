@@ -12,6 +12,6 @@ class ImageController < ApplicationController
     private 
 
     def image_params
-        params.require(:image).permit(:description, :url)
+        params.require(:images).permit(:description, :url)
     end 
 end

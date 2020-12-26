@@ -9,6 +9,10 @@ class Api::V1::PropertiesController < ApplicationController
         end 
     end 
 
+    def show 
+        @property = Property.find(params[:id])
+        render json: PropertySerializer.new(@property).serializable_hash.to_json, status: 200
+    end 
     private 
 
     def property_params 
