@@ -4,4 +4,5 @@ class Api::V1::AmenitiesController < ApplicationController
         @amenities = Amenity.all
         render json: AmenitiesSerializer.new(@amenities).serializable_hash.to_json
     end 
+
 end

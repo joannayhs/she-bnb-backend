@@ -13,8 +13,6 @@ class Api::V1::ListingsController < ApplicationController
     def create 
         @listing = Listing.new(listing_params)
         if @listing.save 
-            byebug
-            @listing.amenities = params[:amenities]
             render json: ListingSerializer.new(@listing).serializable_hash.to_json, status: 200
         else
             render json: {alert: "An error occured"}
@@ -25,6 +23,6 @@ class Api::V1::ListingsController < ApplicationController
     private 
 
     def listing_params
-        params.require(:listing).permit(:title, :description, :type_of, :max_guests, :num_of_beds, :price, :user_id, property: [:street, :city, :state, :zip], images: [:url, :description], amenities:[:name])
+        params.require(:listing).permit(:title, :description, :type_of, :max_guests, :num_of_beds, :price, :user_id)
     end 
 end
