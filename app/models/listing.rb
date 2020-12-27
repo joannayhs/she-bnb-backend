@@ -1,6 +1,7 @@
 class Listing < ApplicationRecord
     belongs_to :user
-
+    before_destroy { amenities.clear }
+    
     validates :title, presence: true, uniqueness: true
     validates :description, :type_of, :max_guests, :num_of_beds, :price, presence: true
 
