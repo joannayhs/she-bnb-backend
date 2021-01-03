@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   delete 'api/v1/logout', to: 'api/v1/session#destroy'
   post 'api/v1/signup', to: 'api/v1/users#create'
   post 'api/v1/amenities_listings', to: 'api/v1/amenities_listings#create'
-  
+  delete 'api/v1/amenities_listings', to: 'api/v1/amenities_listings#destroy'
+
   namespace :api do
     namespace :v1 do
       resources :amenities

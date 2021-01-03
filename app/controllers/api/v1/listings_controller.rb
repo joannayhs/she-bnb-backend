@@ -21,6 +21,7 @@ class Api::V1::ListingsController < ApplicationController
 
     def update
         @listing = Listing.find(params[:id])
+        byebug
         if @listing.update(listing_params)
             render json: ListingSerializer.new(@listing).serializable_hash.to_json, status: 200
         else 
