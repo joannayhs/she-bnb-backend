@@ -18,6 +18,15 @@ class Api::V1::ImagesController < ApplicationController
         end 
     end 
 
+    def destroy 
+        @image = Image.find(params[:id])
+        if @image.destroy 
+            render json: {message: "Image successfully deleted"}, status: :ok 
+        else 
+            render json: {error: "Image could not be found"}, status: :unprocessable_entity
+        end 
+    end 
+
     private 
 
     def image_params
