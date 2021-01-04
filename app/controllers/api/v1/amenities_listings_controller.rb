@@ -8,7 +8,7 @@ class Api::V1::AmenitiesListingsController < ApplicationController
     end 
 
     def destroy
-        @listing = Listing.find(param[:listing_id])
+        @listing = Listing.find(params[:listing_id])
         @amenity_listing = @listing.amenities.find_by(name: params[:name])
         if @amenity_listing.destroy
             render json: { data: "Amenity removed successfully"}, status: :ok 
