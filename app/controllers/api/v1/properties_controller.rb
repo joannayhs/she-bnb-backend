@@ -13,6 +13,16 @@ class Api::V1::PropertiesController < ApplicationController
         @property = Property.find(params[:id])
         render json: PropertySerializer.new(@property).serializable_hash.to_json, status: 200
     end 
+
+    def update 
+        @property = Property.find(params[:id])
+        if @property.update(property_params)
+            render json: PropertySerializer.new(@proeprty).serializable_hash.to_json, status: :ok
+        else 
+            render json: {error: "Unable to update property"}
+        end 
+    end 
+    
     private 
 
     def property_params 

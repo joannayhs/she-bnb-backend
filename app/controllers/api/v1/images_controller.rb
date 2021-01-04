@@ -9,6 +9,15 @@ class Api::V1::ImagesController < ApplicationController
         end 
     end 
 
+    def update 
+        @image = Image.find(params[:id])
+        if @image.update(image_params)
+            render json: ImageSerializer.new(@image).serializable_hash.to_json, status: :ok
+        else 
+            render json: { error: "Could not update image"}
+        end 
+    end 
+
     private 
 
     def image_params
