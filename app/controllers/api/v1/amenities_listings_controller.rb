@@ -10,7 +10,7 @@ class Api::V1::AmenitiesListingsController < ApplicationController
     def destroy
         @listing = Listing.find(params[:listing_id])
         @amenity_listing = @listing.amenities.find_by(name: params[:name])
-        if @amenity_listing.destroy
+        if @listing.amenities.delete(@amenity_listing)
             render json: { data: "Amenity removed successfully"}, status: :ok 
         else 
             render json: { error: "Amenity not found or destroyed"}, status: :unprocessable_entity
