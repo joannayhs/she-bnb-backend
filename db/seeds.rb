@@ -15,7 +15,7 @@ chattanooga_prop = Property.create(street: "937 Shallowford Road", city: "Chatta
 chattanooga.images.create(description: "Kitchen", url: "https://a0.muscache.com/im/pictures/545757a2-d51e-4818-bcce-51a5cb30cac0.jpg?im_w=1200")
 chattanooga.images.create(description: "Bedroom", url: "https://a0.muscache.com/im/pictures/15e4c520-a096-4fcf-af8d-07283dd7aca0.jpg?im_w=1200")
 chattanooga.images.create(description: "Bathroom", url: "https://a0.muscache.com/im/pictures/d4b67869-226f-4824-a4ff-05eb59b12e77.jpg?im_w=720")
-joanna.reservations.create(listing_id: 2, start_date: "2020-10-22", end_date: "2020-10-23")
+joanna.reservations.create(listing_id: 2, start_date: "2020-10-22", end_date: "2020-10-23", num_of_guests: 1)
 joanna.reviews.create(content: "This place was great! It was clean and the host was great!", stars: 5, listing_id:2)
 
 chattanooga.amenities.create(name: "Wifi")
