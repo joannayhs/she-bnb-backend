@@ -4,7 +4,7 @@ class Listing < ApplicationRecord
     
     validates :title, presence: true, uniqueness: true
     validates :description, :type_of, :max_guests, :num_of_beds, :price, presence: true
-    validates :max_guests, :num_of_beds, :price, greater_than_or_equal_to: 1
+    validates :max_guests, :num_of_beds, :price, numericality: {greater_than_or_equal_to: 1}
     has_many :reservations
     has_one :property, dependent: :destroy
     has_and_belongs_to_many :amenities
