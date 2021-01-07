@@ -5,13 +5,17 @@ class Api::V1::PropertiesController < ApplicationController
         if @property.save 
             render json: PropertySerializer.new(@property).serializable_hash.to_json, status: 200
         else 
-            render json: {error: "Could not save property"}
+            render json: {error: "Could not save property"}, status: :unprocessable_entity
         end 
     end 
 
     def show 
         @property = Property.find(params[:id])
-        render json: PropertySerializer.new(@property).serializable_hash.to_json, status: 200
+        if @property
+            render json: PropertySerializer.new(@property).serializable_hash.to_json, status: 200
+        else 
+            render json: {error: "Could not find property"}, status: :unprocessable_entity
+        end 
     end 
 
     def update 

@@ -5,7 +5,7 @@ class Api::V1::ImagesController < ApplicationController
         if @image.save
             render json: ImageSerializer.new(@image).serializable_hash.to_json, status: 200
         else 
-            render json: {error: "Could not add image"}
+            render json: {error: @image.errors.full_messages.to_sentences}, status: :unprocessable_entity
         end 
     end 
 

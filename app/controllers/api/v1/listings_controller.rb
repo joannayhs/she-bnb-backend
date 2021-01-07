@@ -31,9 +31,9 @@ class Api::V1::ListingsController < ApplicationController
     def destroy 
         @listing = Listing.find(params[:id])
         if @listing.destroy 
-            render json: {message: "Listing was removed successfully"}
+            render json: {message: "Listing was removed successfully"}, status: 200
         else 
-            render json: {error: "Could not remove listing"}
+            render json: {error: "Could not remove listing"}, status: 200
         end 
     end 
 
