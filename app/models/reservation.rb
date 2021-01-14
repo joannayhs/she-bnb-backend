@@ -20,6 +20,7 @@ class Reservation < ApplicationRecord
     def too_many_guests
         listing = Listing.find(self.listing_id)
         if self.num_of_guests > listing.max_guests
+            byebug
             errors.add(:num_of_guests, "Too many guests")
         end 
     end 

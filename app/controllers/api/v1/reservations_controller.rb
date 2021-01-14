@@ -15,7 +15,16 @@ class Api::V1::ReservationsController < ApplicationController
         if @reservation.save 
             render json: ReservationSerializer.new(@reservation).serializable_hash.to_json, status: 200
         else 
-            render json: {error: @reservation.errors.full_messages.to_sentences}, status: :unprocessable_entity
+            render json: {error: @reservation.errors.full_messages.to_sentence}, status: :unprocessable_entity
+        end 
+    end 
+
+    def update
+        @reservation = Reservation.find(params[:id])
+        if @reservation.update(reservation_params)
+            render json: ReservationSerializer.new(@reservation).serializable_hash.to_json, status: :ok
+        else 
+            render json: {error: @reservation.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end 
     end 
 
